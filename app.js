@@ -7,6 +7,7 @@ const app=express()
 
 // requring routes
 const auth=require("./routes/auth")
+const user=require("./routes/user")
 
 
 
@@ -25,6 +26,7 @@ app.use(cookieParser())
 
 // route middleware
 app.use("/api/auth",auth)
+app.use("/api/user",user)
 
 app.use(async(req,res,next)=>{
     next(createError.NotFound())
