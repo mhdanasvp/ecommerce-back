@@ -28,15 +28,15 @@ module.exports={
         })
         return await schema.validateAsync(category)
     },
-    productValidation:async function(product){
-        const schema=Joi.object({
-            name:Joi.string().min(2).max(255).required(),
-            description:Joi.string().min(2).max(2000).required(),
-            price:Joi.number().required().min(1).max(32),
-            quantity:Joi.number(),
-            category:Joi.required()
+    // productValidation:async function(product){
+    //     const schema=Joi.object({
+    //         name:Joi.string().min(2).max(255).required(),
+    //         description:Joi.string().min(2).max(2000).required(),
+    //         price:Joi.number().required().min(1).max(32),
+    //         quantity:Joi.number(),
+    //         category:Joi.required()
             
-        })
-        return await schema.validateAsync(product)
-    }
+    //     })
+    //     return await schema.validateAsync(product)
+    // }
 }

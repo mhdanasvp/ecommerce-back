@@ -8,6 +8,7 @@ module.exports=function (handler){
         try {
             await handler(req,res)
         } catch (error) {
+            
            if(error.isJoi===true) error.status=422
            next(error)
         }
