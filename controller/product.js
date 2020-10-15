@@ -5,7 +5,7 @@ const _=require("lodash")
 const asyncHandler=require("../helpers/asyncHandler")
 
 const createError=require("http-errors")
-const { result } = require("lodash")
+
 
 
 exports.productById=async (req,res,next,id)=>{
