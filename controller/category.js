@@ -55,6 +55,8 @@ exports.update=asyncHandler(async(req,res)=>{
     
     const result=await categoryValidation(req.body)
     const isNameExist=await Category.findOne({ _id: { $ne: category._id},name:result.name})
+    
+
     if(isNameExist){
         throw createError.Conflict("category alresdy exist")
     }

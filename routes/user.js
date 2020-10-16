@@ -10,8 +10,8 @@ router.get("/secret/:userId",verifyAccessToken,isAuth,isAdmin,(req,res)=>{
     res.json({user:req.profile})
 })
 router
-    .get("/:userId",verifyAccessToken,isAuth,isAdmin,read)
-    .put("/:userId",verifyAccessToken,isAuth,isAdmin,update)
+    .get("/:userId",verifyAccessToken,isAuth,read)
+    .put("/:userId",verifyAccessToken,isAuth,update)
 
 
 

@@ -32,10 +32,7 @@ exports.read=asyncHandler(async(req,res)=>{
 })
 exports.update=asyncHandler(async(req,res)=>{
     let user=await req.profile
-    // const isExist=await Category.findOne({_id:result._id})
-    // if(!isExist){
-    //     throw next(createError.NotFound("User not found"))
-    // }
+    
     const result=await userRegistrationValidation(req.body)
     const isEmailExist=await Category.findOne({_id: { $ne: user._id},email:result.email})
     if(isEmailExist){
