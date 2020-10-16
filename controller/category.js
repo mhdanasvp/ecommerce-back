@@ -52,9 +52,10 @@ exports.read=asyncHandler(async(req,res)=>{
 
 exports.update=asyncHandler(async(req,res)=>{
     let category= await req.category
+    
     const result=await categoryValidation(req.body)
-    const isExist=await Category.findOne({name:result.name})
-    if(isExist){
+    const isNameExist=await Category.findOne({ _id: { $ne: category._id},name:result.name})
+    if(isNameExist){
         throw createError.Conflict("category alresdy exist")
     }
     category= _.extend(category,result)
