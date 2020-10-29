@@ -9,9 +9,9 @@ const { read,update } = require('../controller/user');
 router.get("/secret/:userId",verifyAccessToken,isAuth,isAdmin,(req,res)=>{
     res.json({user:req.profile})
 })
-router
-    .get("/:userId",verifyAccessToken,isAuth,read)
-    .put("/:userId",verifyAccessToken,isAuth,update)
+
+router.get("/:userId",verifyAccessToken,isAuth,read)
+router.put("/:userId",verifyAccessToken,isAuth,update)
 
 
 

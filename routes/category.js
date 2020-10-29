@@ -6,12 +6,12 @@ const {verifyAccessToken}=require("../helpers/jwtHelper")
 const { categoryById,create,read,update,remove,list } = require('../controller/category');
 
 
-router
-    .post("/create/:userId",verifyAccessToken,isAuth,isAdmin,create)
-    .get("/:categoryId",read)
-    .put("/:categoryId/:userId",verifyAccessToken,isAuth,isAdmin,update)
-    .delete("/:categoryId/:userId",verifyAccessToken,isAuth,isAdmin,remove)
-    .get("/",list)
+
+router.post("/create/:userId",verifyAccessToken,isAuth,isAdmin,create)
+router.get("/:categoryId",read)
+router.put("/:categoryId/:userId",verifyAccessToken,isAuth,isAdmin,update)
+router.delete("/:categoryId/:userId",verifyAccessToken,isAuth,isAdmin,remove)
+router.get("/",list)
 
 
 
